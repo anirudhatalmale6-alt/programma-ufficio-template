@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programma Ufficio - Buffetti Este</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            <a href="#">Chi siamo</a>
+            <a href="#">Assistenza</a>
+            <a href="#">Contattaci</a>
+        </div>
+        <div class="top-bar-right">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i> (+39) 391 701 0441</a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-left">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="/" class="logo">
+                <img src="img/logo-buffetti.png" alt="Programma Ufficio - Buffetti" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-main">PROGRAMMA UFFICIO</span>
+                    <span class="logo-sub">Buffetti Este</span>
+                </div>
+            </a>
+        </div>
+        <div class="header-center">
+            <div class="search-bar">
+                <input type="text" placeholder="Cerca prodotti, categorie, marchi..." id="searchInput">
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="#" class="header-icon" title="Il mio account">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </a>
+            <a href="#" class="header-icon" title="Preferiti">
+                <i class="fa-regular fa-heart"></i>
+                <span>Preferiti</span>
+            </a>
+            <a href="#" class="header-icon cart-icon" title="Carrello">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Carrello</span>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="main-nav" id="mainNav">
+    <div class="container">
+        <ul class="nav-list">
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-folder-open"></i> Archiviazione</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Archiviazione</h4>
+                        <ul>
+                            <li><a href="#">Raccoglitori</a></li>
+                            <li><a href="#">Cartelline</a></li>
+                            <li><a href="#">Scatole archivio</a></li>
+                            <li><a href="#">Buste trasparenti</a></li>
+                            <li><a href="#">Portadocumenti</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-pen"></i> Cancelleria</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Cancelleria</h4>
+                        <ul>
+                            <li><a href="#">Penne e matite</a></li>
+                            <li><a href="#">Colle e nastri</a></li>
+                            <li><a href="#">Forbici e taglierine</a></li>
+                            <li><a href="#">Evidenziatori</a></li>
+                            <li><a href="#">Correttori</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-file"></i> Carta</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Carta</h4>
+                        <ul>
+                            <li><a href="#">Carta per stampanti</a></li>
+                            <li><a href="#">Carta fotografica</a></li>
+                            <li><a href="#">Rotoli POS</a></li>
+                            <li><a href="#">Buste e sacchetti</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-print"></i> Consumabili</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Per marca</h4>
+                        <ul>
+                            <li><a href="#">HP</a></li>
+                            <li><a href="#">Canon</a></li>
+                            <li><a href="#">Epson</a></li>
+                            <li><a href="#">Brother</a></li>
+                            <li><a href="#">Samsung</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-laptop"></i> Informatica</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Informatica</h4>
+                        <ul>
+                            <li><a href="#">Computer</a></li>
+                            <li><a href="#">Accessori PC</a></li>
+                            <li><a href="#">Storage</a></li>
+                            <li><a href="#">Networking</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#"><i class="fa-solid fa-chair"></i> Arredo</a>
+            </li>
+            <li class="nav-item">
+                <a href="#"><i class="fa-solid fa-school"></i> Scuola</a>
+            </li>
+            <li class="nav-item">
+                <a href="#"><i class="fa-solid fa-box"></i> Spedizione</a>
+            </li>
+            <li class="nav-item has-mega">
+                <a href="#"><i class="fa-solid fa-ellipsis"></i> Altro</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Altre categorie</h4>
+                        <ul>
+                            <li><a href="#">Macchine per ufficio</a></li>
+                            <li><a href="#">Visual e comunicazione</a></li>
+                            <li><a href="#">Prodotti per comunita</a></li>
+                            <li><a href="#">Regalo</a></li>
+                            <li><a href="#">Sistemi di stampa</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item nav-highlight">
+                <a href="#"><i class="fa-solid fa-tags"></i> Offerte</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <span>Menu</span>
+        <button class="mobile-nav-close" id="mobileNavClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+        <li><a href="#">Archiviazione</a></li>
+        <li><a href="#">Cancelleria</a></li>
+        <li><a href="#">Carta</a></li>
+        <li><a href="#">Consumabili</a></li>
+        <li><a href="#">Informatica</a></li>
+        <li><a href="#">Arredo</a></li>
+        <li><a href="#">Scuola</a></li>
+        <li><a href="#">Spedizione</a></li>
+        <li><a href="#">Macchine per ufficio</a></li>
+        <li><a href="#">Visual e comunicazione</a></li>
+        <li><a href="#">Prodotti per comunita</a></li>
+        <li><a href="#">Regalo</a></li>
+        <li class="mobile-nav-highlight"><a href="#">Offerte</a></li>
+    </ul>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-slide" style="background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Il tuo ufficio, la nostra passione</h1>
+                <p>Tutto per l'ufficio con la qualita e la convenienza Buffetti</p>
+                <a href="#" class="btn btn-primary">Scopri i prodotti</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Bar -->
+<section class="benefits-bar">
+    <div class="container">
+        <div class="benefit">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <strong>Spedizione gratuita</strong>
+                <span>Per ordini superiori a 49 EUR</span>
+            </div>
+        </div>
+        <div class="benefit">
+            <i class="fa-solid fa-store"></i>
+            <div>
+                <strong>Ritiro in negozio</strong>
+                <span>Disponibile a Este (PD)</span>
+            </div>
+        </div>
+        <div class="benefit">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+                <strong>Reso facile</strong>
+                <span>Entro 14 giorni</span>
+            </div>
+        </div>
+        <div class="benefit">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+                <strong>Pagamenti sicuri</strong>
+                <span>Carte, PayPal, Bonifico</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Categories Grid -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">Le nostre categorie</h2>
+        <div class="categories-grid">
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-folder-open"></i></div>
+                <h3>Archiviazione</h3>
+                <span>Raccoglitori, cartelline, scatole</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+                <h3>Cancelleria</h3>
+                <span>Penne, colle, forbici</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h3>Carta</h3>
+                <span>Stampanti, fotografica, rotoli</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-print"></i></div>
+                <h3>Consumabili</h3>
+                <span>Toner, cartucce, nastri</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-laptop"></i></div>
+                <h3>Informatica</h3>
+                <span>Computer, accessori, storage</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-couch"></i></div>
+                <h3>Arredo</h3>
+                <span>Scrivanie, sedie, scaffali</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Scuola</h3>
+                <span>Quaderni, zaini, colori</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon"><i class="fa-solid fa-box-open"></i></div>
+                <h3>Spedizione</h3>
+                <span>Scatole, nastri, buste</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Products -->
+<section class="featured-section">
+    <div class="container">
+        <h2 class="section-title">Prodotti in evidenza</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-badge">-18%</div>
+                <div class="product-image">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">HP</span>
+                    <h4 class="product-name">Toner HP 305A nero originale</h4>
+                    <div class="product-price">
+                        <span class="price-current">&euro;65,90</span>
+                        <span class="price-old">&euro;79,90</span>
+                    </div>
+                    <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> Aggiungi</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">Fellowes</span>
+                    <h4 class="product-name">Distruggi documenti Fellowes 8Mc</h4>
+                    <div class="product-price">
+                        <span class="price-current">&euro;129,00</span>
+                    </div>
+                    <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> Aggiungi</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-badge sale">Novita</div>
+                <div class="product-image">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">Stabilo</span>
+                    <h4 class="product-name">Evidenziatori Stabilo Boss set 8 colori</h4>
+                    <div class="product-price">
+                        <span class="price-current">&euro;12,50</span>
+                    </div>
+                    <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> Aggiungi</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-badge">-10%</div>
+                <div class="product-image">
+                    <i class="fa-solid fa-image"></i>
+                </div>
+                <div class="product-info">
+                    <span class="product-brand">Navigator</span>
+                    <h4 class="product-name">Carta Navigator A4 80g 500 fogli</h4>
+                    <div class="product-price">
+                        <span class="price-current">&euro;5,90</span>
+                        <span class="price-old">&euro;6,50</span>
+                    </div>
+                    <button class="btn btn-cart"><i class="fa-solid fa-cart-plus"></i> Aggiungi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Brands Section -->
+<section class="brands-section">
+    <div class="container">
+        <h2 class="section-title">I nostri marchi</h2>
+        <div class="brands-grid">
+            <div class="brand-item">HP</div>
+            <div class="brand-item">Canon</div>
+            <div class="brand-item">Epson</div>
+            <div class="brand-item">Brother</div>
+            <div class="brand-item">Samsung</div>
+            <div class="brand-item">Fellowes</div>
+            <div class="brand-item">Stabilo</div>
+            <div class="brand-item">Legami</div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>Rimani aggiornato</h2>
+            <p>Iscriviti alla newsletter per ricevere offerte esclusive e novita</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="La tua email...">
+                <button type="submit" class="btn btn-primary">Iscriviti</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Programma Ufficio</h4>
+                <ul>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Contattaci</a></li>
+                    <li><a href="#">Assistenza</a></li>
+                    <li><a href="#">Lavora con noi</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categorie</h4>
+                <ul>
+                    <li><a href="#">Archiviazione</a></li>
+                    <li><a href="#">Cancelleria</a></li>
+                    <li><a href="#">Carta</a></li>
+                    <li><a href="#">Consumabili</a></li>
+                    <li><a href="#">Informatica</a></li>
+                    <li><a href="#">Arredo</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Informazioni</h4>
+                <ul>
+                    <li><a href="#">Condizioni di vendita</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Diritto di recesso</a></li>
+                    <li><a href="#">Modalita di pagamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contatti</h4>
+                <p class="footer-contact"><i class="fa-solid fa-location-dot"></i> Via Zuccherificio 4, 35042 Este (PD)</p>
+                <p class="footer-contact"><i class="fa-solid fa-phone"></i> 0429 3864</p>
+                <p class="footer-contact"><i class="fa-brands fa-whatsapp"></i> (+39) 391 701 0441</p>
+                <p class="footer-contact"><i class="fa-solid fa-envelope"></i> ordini@programmaufficio.eu</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2026 PROGRAMMA UFFICIO S.A.S. - C.F. e P.I. 03556930240</p>
+            <div class="payment-icons">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-amex"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
