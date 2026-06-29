@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programma Ufficio - Buffetti Este - Preview ASP Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="asp-converted/css/buffetti.css">
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="bf-topbar">
+    <div class="bf-container">
+        <div class="bf-topbar-left">
+            <a href="#">Chi siamo</a>
+            <a href="#">Contattaci</a>
+            <a href="#">Condizioni di vendita</a>
+        </div>
+        <div class="bf-topbar-right">
+            <a href="#" class="bf-topbar-user"><i class="fa fa-user"></i> Mario Rossi</a>
+            <div class="bf-topbar-links">
+                <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                <a href="#"><i class="fa fa-heart"></i> Preferiti</a>
+                <a href="#"><i class="fa fa-history"></i> Storico</a>
+            </div>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i> (+39) 391 701 0441</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="bf-header">
+    <div class="bf-container">
+        <div class="bf-header-left">
+            <button class="bf-mobile-menu-btn" id="bfMobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="#" class="bf-logo">
+                <img src="img/logo-buffetti.png" alt="Programma Ufficio - Buffetti">
+            </a>
+        </div>
+        <div class="bf-header-center">
+            <form>
+                <div class="bf-search-bar">
+                    <input type="search" placeholder="Cerca per codice, descrizione, marca...">
+                    <button class="bf-search-btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="bf-header-right">
+            <a href="#" class="bf-header-icon" title="Il mio account">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </a>
+            <a href="#" class="bf-header-icon" title="Preferiti">
+                <i class="fa-regular fa-heart"></i>
+                <span>Preferiti</span>
+            </a>
+            <div class="bf-header-icon" id="bfCartBtn" title="Carrello">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Carrello</span>
+                <span class="bf-cart-badge">3</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Navigation -->
+<nav class="bf-nav" id="bfMainNav">
+    <div class="bf-container">
+        <ul class="bf-nav-list">
+            <li class="bf-nav-item bf-nav-catalog">
+                <a href="#"><i class="fa-solid fa-bars"></i> Catalogo</a>
+                <div class="bf-mega-menu">
+                    <ul class="bf-mega-list">
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>CATALOGO BUFFETTI</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>Archiviazione</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <div class="bf-mega-subcats">
+                                <h4>ARCHIVIAZIONE</h4>
+                                <ul>
+                                    <li><a href="#">Raccoglitori</a></li>
+                                    <li><a href="#">Cartelline</a></li>
+                                    <li><a href="#">Scatole archivio</a></li>
+                                    <li><a href="#">Buste trasparenti</a></li>
+                                    <li><a href="#">Portadocumenti</a></li>
+                                    <li><a href="#">Dorsi per rilegatura</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>Cancelleria</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <div class="bf-mega-subcats">
+                                <h4>CANCELLERIA</h4>
+                                <ul>
+                                    <li><a href="#">Penne e matite</a></li>
+                                    <li><a href="#">Colle e nastri adesivi</a></li>
+                                    <li><a href="#">Forbici e taglierine</a></li>
+                                    <li><a href="#">Evidenziatori</a></li>
+                                    <li><a href="#">Correttori</a></li>
+                                    <li><a href="#">Cucitrici e punti</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>Carta</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                            <div class="bf-mega-subcats">
+                                <h4>CARTA</h4>
+                                <ul>
+                                    <li><a href="#">Carta per stampanti A4</a></li>
+                                    <li><a href="#">Carta fotografica</a></li>
+                                    <li><a href="#">Rotoli POS</a></li>
+                                    <li><a href="#">Buste e sacchetti</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>Informatica</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </li>
+                        <li class="bf-mega-category">
+                            <a href="#">
+                                <span>Arredo ufficio</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-book"></i> Catalogo Buffetti</a>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-folder-open"></i> Catalogo Programma</a>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-print"></i> Cartucce Toner</a>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-envelope"></i> Contatti</a>
+            </li>
+            <li class="bf-nav-item">
+                <a href="#"><i class="fa-solid fa-newspaper"></i> Volantino</a>
+            </li>
+            <li class="bf-nav-item bf-nav-highlight">
+                <a href="#"><i class="fa-solid fa-user-plus"></i> Iscriviti</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Benefits Bar -->
+<section class="bf-benefits">
+    <div class="bf-container">
+        <div class="bf-benefit">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <strong>Spedizione veloce</strong>
+                <span>Consegna in 24/48 ore</span>
+            </div>
+        </div>
+        <div class="bf-benefit">
+            <i class="fa-solid fa-store"></i>
+            <div>
+                <strong>Ritiro in negozio</strong>
+                <span>Disponibile a Este (PD)</span>
+            </div>
+        </div>
+        <div class="bf-benefit">
+            <i class="fa-solid fa-rotate-left"></i>
+            <div>
+                <strong>Reso facile</strong>
+                <span>Entro 14 giorni</span>
+            </div>
+        </div>
+        <div class="bf-benefit">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+                <strong>Pagamenti sicuri</strong>
+                <span>Carte, PayPal, Bonifico</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section style="padding:40px 0;">
+    <div class="bf-container">
+        <h2 class="bf-section-title">PROGRAMMA UFFICIO BUFFETTI ESTE PADOVA</h2>
+        <div class="bf-home-cards">
+            <div class="bf-home-card">
+                <div class="bf-home-card-img" style="background:linear-gradient(135deg, #1a365d, #2b6cb0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <div class="bf-home-card-body">
+                    <h3>Il negozio PROGRAMMA UFFICIO e' rivenditore Buffetti</h3>
+                    <p>Ai prodotti tradizionali come modulistica, editoria, archivio e cancelleria, nel corso degli anni ha aggiunto altre categorie di prodotto.</p>
+                    <a href="#" class="bf-read-more">continua... <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="bf-home-card">
+                <div class="bf-home-card-img" style="background:linear-gradient(135deg, #38a169, #48bb78);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <div class="bf-home-card-body">
+                    <h3>SPID FACILE E RAPIDO CON BUFFETTI</h3>
+                    <p>La richiesta dello SPID con Buffetti e' semplicissima. Bastera' compilare il modulo per la richiesta di informazioni.</p>
+                </div>
+            </div>
+            <div class="bf-home-card">
+                <div class="bf-home-card-img" style="background:linear-gradient(135deg, #e53e3e, #fc8181);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+                <div class="bf-home-card-body">
+                    <h3>OFFERTE CON SCONTO SINO AL 70%</h3>
+                    <p>Il volantino buffetti esce ogni 3 mesi e si possono trovare offerte sino al 70% con prodotti di alta gamma.</p>
+                    <a href="#" class="bf-read-more">vai alla sezione... <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="bf-home-card">
+                <div class="bf-home-card-img" style="background:linear-gradient(135deg, #805ad5, #b794f4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:48px;">
+                    <i class="fa-solid fa-print"></i>
+                </div>
+                <div class="bf-home-card-body">
+                    <h3>LE COMPATIBILI PIU' SICURE ED ECONOMICHE</h3>
+                    <p>Cartucce compatibili per marca: HP, Canon, Epson, Brother, Samsung, Lexmark e molte altre.</p>
+                    <a href="#" class="bf-read-more">vai alla sezione... <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Category Page Preview (with Sidebar) -->
+<section style="padding:20px 0;background:var(--bg-light);">
+    <div class="bf-container">
+        <h2 class="bf-section-title">Anteprima: Pagina Catalogo con Filtri</h2>
+    </div>
+</section>
+
+<div class="bf-breadcrumb">
+    <div class="bf-container">
+        <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Cancelleria</span>
+    </div>
+</div>
+
+<div class="bf-page">
+    <div class="bf-container">
+        <div class="bf-page-grid">
+            <!-- Sidebar -->
+            <div class="bf-sidebar">
+                <div class="bf-sidebar-section">
+                    <h3 class="bf-sidebar-title">Sottocategorie</h3>
+                    <ul class="bf-filter-list">
+                        <li><label><input type="checkbox"> <a href="#">Penne e matite</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Colle e nastri</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Forbici e taglierine</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Evidenziatori</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Correttori</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Cucitrici</a></label></li>
+                    </ul>
+                </div>
+                <div class="bf-sidebar-section">
+                    <h3 class="bf-sidebar-title">Colori</h3>
+                    <ul class="bf-filter-list">
+                        <li><label><input type="radio" name="color"> Nero</label></li>
+                        <li><label><input type="radio" name="color"> Bianco</label></li>
+                        <li><label><input type="radio" name="color"> Rosso</label></li>
+                        <li><label><input type="radio" name="color"> Blu</label></li>
+                    </ul>
+                </div>
+                <div class="bf-sidebar-section">
+                    <h3 class="bf-sidebar-title">Marchi</h3>
+                    <ul class="bf-filter-list">
+                        <li><label><input type="checkbox"> <a href="#">Stabilo</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Pilot</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Bic</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Faber-Castell</a></label></li>
+                        <li><label><input type="checkbox"> <a href="#">Pentel</a></label></li>
+                    </ul>
+                </div>
+                <button class="bf-filter-btn"><i class="fa-solid fa-filter"></i> Filtra Prodotti</button>
+                <div class="bf-sidebar-promo" style="margin-top:20px;">
+                    <div style="background:var(--bg-gray);height:200px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:14px;">
+                        <i class="fa-solid fa-book-open" style="font-size:32px;margin-right:8px;"></i> Volantino
+                    </div>
+                    <p><i class="fa-solid fa-book-open"></i> Sfoglia il volantino</p>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div>
+                <div class="bf-products-grid">
+                    <div class="bf-product-card">
+                        <span class="bf-product-badge">-15%</span>
+                        <div class="bf-product-image">
+                            <i class="fa-solid fa-pen" style="font-size:48px;color:var(--text-muted);"></i>
+                        </div>
+                        <div class="bf-product-info">
+                            <span class="bf-product-code">BUF-1234</span>
+                            <h4 class="bf-product-name"><a href="#">Set Penne Stabilo Point 88 - 10 colori</a></h4>
+                            <div class="bf-product-price">
+                                <span class="bf-price-current">&euro; 8,50</span>
+                                <span class="bf-price-old">&euro; 10,00</span>
+                            </div>
+                            <div class="bf-product-footer">
+                                <button class="bf-btn-cart"><i class="fa-solid fa-cart-plus"></i> Acquista</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bf-product-card">
+                        <div class="bf-product-image">
+                            <i class="fa-solid fa-highlighter" style="font-size:48px;color:var(--text-muted);"></i>
+                        </div>
+                        <div class="bf-product-info">
+                            <span class="bf-product-code">BUF-5678</span>
+                            <h4 class="bf-product-name"><a href="#">Evidenziatori Stabilo Boss Original - 6 pezzi</a></h4>
+                            <div class="bf-product-price">
+                                <span class="bf-price-current">&euro; 7,90</span>
+                            </div>
+                            <div class="bf-product-footer">
+                                <button class="bf-btn-cart"><i class="fa-solid fa-cart-plus"></i> Acquista</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bf-product-card">
+                        <span class="bf-product-badge new">New</span>
+                        <div class="bf-product-image">
+                            <i class="fa-solid fa-scissors" style="font-size:48px;color:var(--text-muted);"></i>
+                        </div>
+                        <div class="bf-product-info">
+                            <span class="bf-product-code">BUF-9012</span>
+                            <h4 class="bf-product-name"><a href="#">Forbici Titanio 21cm Maped</a></h4>
+                            <div class="bf-product-price">
+                                <span class="bf-price-current">&euro; 5,40</span>
+                            </div>
+                            <div class="bf-product-footer">
+                                <button class="bf-btn-cart"><i class="fa-solid fa-cart-plus"></i> Acquista</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bf-product-card">
+                        <span class="bf-product-badge">-20%</span>
+                        <div class="bf-product-image">
+                            <i class="fa-solid fa-tape" style="font-size:48px;color:var(--text-muted);"></i>
+                        </div>
+                        <div class="bf-product-info">
+                            <span class="bf-product-code">BUF-3456</span>
+                            <h4 class="bf-product-name"><a href="#">Nastro adesivo trasparente 50m x 3 rotoli</a></h4>
+                            <div class="bf-product-price">
+                                <span class="bf-price-current">&euro; 3,20</span>
+                                <span class="bf-price-old">&euro; 4,00</span>
+                            </div>
+                            <div class="bf-product-footer">
+                                <button class="bf-btn-cart"><i class="fa-solid fa-cart-plus"></i> Acquista</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Brands -->
+<section class="bf-brands-section">
+    <div class="bf-container">
+        <h2 class="bf-section-title">I Nostri Brand</h2>
+        <div class="bf-brands-grid">
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">HP</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Canon</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Epson</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Brother</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Samsung</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Stabilo</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Legami</span>
+            <span style="padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-weight:700;color:var(--text-light);">Fellowes</span>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="bf-newsletter">
+    <div class="bf-container">
+        <h2>Iscriviti alla nostra newsletter</h2>
+        <p>Riceverai offerte speciali, sconti e coupon periodici</p>
+        <form class="bf-newsletter-form">
+            <input type="email" placeholder="La tua email...">
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i> Iscriviti</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bf-footer">
+    <div class="bf-container">
+        <div class="bf-footer-grid">
+            <div class="bf-footer-col bf-footer-about">
+                <h4>Programma Ufficio</h4>
+                <div class="bf-footer-logo">
+                    <img src="img/logo-buffetti.png" alt="Programma Ufficio" style="height:35px;">
+                </div>
+                <p class="bf-footer-company">PROGRAMMA UFFICIO S.A.S.</p>
+                <p class="bf-footer-desc">Il tuo partner per forniture ufficio, cancelleria, informatica e molto altro.</p>
+                <p class="bf-footer-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="#">ordini@programmaufficio.eu</a>
+                </p>
+                <p class="bf-footer-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="#">(+39) 391 701 0441</a> anche su WhatsApp
+                </p>
+            </div>
+            <div class="bf-footer-col">
+                <h4>Link Rapidi</h4>
+                <ul>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Dove ci trovi</a></li>
+                    <li><a href="#">Accedi</a></li>
+                    <li><a href="#">Preferiti</a></li>
+                    <li><a href="#">Contatti</a></li>
+                    <li><a href="#">Condizioni di Vendita</a></li>
+                    <li><a href="#">Area riservata</a></li>
+                </ul>
+            </div>
+            <div class="bf-footer-col">
+                <h4>Categorie</h4>
+                <ul>
+                    <li><a href="#">Catalogo Buffetti</a></li>
+                    <li><a href="#">Catalogo Programma</a></li>
+                    <li><a href="#">Cartucce e Toner</a></li>
+                    <li><a href="#">Volantino Offerte</a></li>
+                    <li><a href="#">Registrati</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="bf-footer-col">
+                <h4>Contatti</h4>
+                <p class="bf-footer-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Via Zuccherificio, 4 - 35042 ESTE (PD)</span>
+                </p>
+                <p class="bf-footer-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="#">ordini@programmaufficio.eu</a>
+                </p>
+                <p class="bf-footer-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(+39) 391 701 0441</span>
+                </p>
+                <div class="bf-footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bf-footer-bottom">
+        <div class="bf-container">
+            <p>Copyright &copy; 2025 Developer Marco Genovese &middot;
+                <a href="#">Privacy Policy</a> &middot;
+                <a href="#">Condizioni di Vendita</a>
+            </p>
+            <div class="bf-payment-icons">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Buttons -->
+<div class="bf-floating-btns">
+    <a class="bf-floating-btn whatsapp" href="#" title="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="bf-floating-btn facebook" href="#" title="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+</div>
+
+<button class="bf-scroll-top" id="bfScrollTop">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Mobile Nav -->
+<div class="bf-mobile-overlay" id="bfMobileOverlay"></div>
+<div class="bf-mobile-nav" id="bfMobileNav">
+    <div class="bf-mobile-nav-header">
+        <span>Menu</span>
+        <button class="bf-mobile-nav-close" id="bfMobileNavClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="bf-mobile-nav-logo">
+        <img src="img/logo-buffetti.png" alt="logo" style="height:30px;">
+    </div>
+    <ul class="bf-mobile-nav-list">
+        <li><a href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-book"></i> Catalogo Buffetti</a></li>
+        <li><a href="#"><i class="fa-solid fa-folder-open"></i> Catalogo Programma</a></li>
+        <li><a href="#"><i class="fa-solid fa-print"></i> Cartucce Toner</a></li>
+        <li><a href="#"><i class="fa-solid fa-newspaper"></i> Volantino</a></li>
+        <li><a href="#"><i class="fa-regular fa-heart"></i> Preferiti</a></li>
+        <li><a href="#"><i class="fa-solid fa-cart-shopping"></i> Carrello / Checkout</a></li>
+        <li><a href="#"><i class="fa-solid fa-envelope"></i> Contatti</a></li>
+    </ul>
+    <div class="bf-mobile-nav-actions">
+        <a href="#"><i class="fa-solid fa-right-to-bracket"></i> Accedi al sito</a>
+        <a href="#"><i class="fa-solid fa-user-plus"></i> Registrati</a>
+    </div>
+</div>
+
+<!-- Cart Modal -->
+<div class="bf-cart-modal" id="bfCartModal">
+    <div class="bf-cart-modal-overlay" id="bfCartModalOverlay"></div>
+    <div class="bf-cart-modal-content">
+        <div class="bf-cart-modal-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Carrello</h3>
+            <button class="bf-cart-modal-close" id="bfCartModalClose"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="bf-cart-modal-body">
+            <p style="text-align:center;padding:40px;color:var(--text-muted);">
+                <i class="fa-solid fa-cart-shopping" style="font-size:48px;margin-bottom:16px;display:block;"></i>
+                Il carrello verra' caricato dal server ASP
+            </p>
+        </div>
+        <div class="bf-cart-modal-footer">
+            <a href="#" class="bf-btn bf-btn-primary bf-btn-block">
+                <i class="fa-solid fa-credit-card"></i> Vai al Checkout
+            </a>
+            <button class="bf-btn bf-btn-outline bf-btn-block" id="bfCartContinue">
+                <i class="fa-solid fa-arrow-left"></i> Continua lo shopping
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="asp-converted/js/buffetti.js"></script>
+</body>
+</html>
