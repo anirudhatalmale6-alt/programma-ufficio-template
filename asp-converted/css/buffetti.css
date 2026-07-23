@@ -40,6 +40,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
+    overflow-x: hidden;
 }
 
 a {
@@ -1715,11 +1716,32 @@ img {
     }
 
     .bf-header-icon {
-        padding: 8px;
+        padding: 6px;
+    }
+
+    .bf-header .bf-container {
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .bf-header-left {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .bf-header-right {
+        gap: 2px;
+    }
+
+    .bf-logo {
+        min-width: 0;
+        overflow: hidden;
     }
 
     .bf-logo img {
         height: 32px;
+        max-width: 150px;
+        object-fit: contain;
     }
 
     .bf-hero-slide {
@@ -1788,6 +1810,18 @@ img {
         grid-template-columns: 1fr;
     }
 
+    .bf-logo img {
+        max-width: 120px;
+    }
+
+    .bf-header-icon {
+        padding: 5px;
+    }
+
+    .bf-header-icon i {
+        font-size: 18px;
+    }
+
     .bf-content-page .bf-container {
         padding: 0 12px;
     }
@@ -1798,6 +1832,11 @@ img {
     }
 
     .bf-cart-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
         font-size: 12px;
     }
 
@@ -1811,6 +1850,19 @@ img {
 
     .bf-contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .bf-history-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .bf-page-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 }
 
