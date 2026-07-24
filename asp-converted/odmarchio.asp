@@ -1,0 +1,129 @@
+<!--#include file="connessionesql.inc"-->
+<!--#include file="parametriasp.inc"-->
+<!--#include file="parametriasplettura.inc" -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!--#include file="head.inc" -->
+  </head>
+  <body>
+
+
+<!--#include file="top.inc" -->
+<!--#include file="menusx.inc" -->
+
+
+
+          <div class="bf-main-content">
+            <div class="bf-toolbar">
+              <div class="bf-toolbar-info">
+				<h1 style="color:#ff0000;" ><%=ucase(request("marchio"))%></h1>
+                <p><%=lcase(request("sotto"))%></p>
+              </div>
+              <div class="bf-toolbar-sort">
+                <span>Order by:</span>
+					<form name="form" method="post" action='odlista.asp?pagsp=1&cat=<%=Trim(Replace(Request("cat")," ","%20"))%>&sotto=<%=Trim(Replace(Request("sotto")," ","%20"))%>' ID="Form1">
+					<select	class="bf-form-select">
+					<option value="p1 asc" >ordina per prezzo minore</option>
+					<option value="p1 desc">ordina per prezzo maggiore</option>
+					<option value="marchio asc">ordina per nome della marca </option>
+					</select>
+					</form>
+              </div>
+            </div>
+            <div class="bf-products-grid">
+
+          								<%
+
+					
+								
+									'Pagine
+									Divpagine=18
+									'Pagine gestione
+									paginasp=request("Pagsp")
+									if paginasp="" then 
+										paginasp=0
+									else 
+										paginasp=cint(paginasp)*Divpagine
+									end if
+									if Trim(cstr(Replace(Request("Ricerca"),"%20"," ")))<>"" then
+									 	vordine=Trim(cstr(Replace(Request("Ricerca"),"%20"," ")))
+									else
+										 vordine=" giacenza desc "
+									end if
+									
+									'Query
+									querydcount="Select count(*) as Tot From prodotti where SottoCategoria='" & Trim(Replace(Request("sotto"),"%20"," ")) & "' and marchio like '%" & Trim(Replace(Request("marchio"),"%20"," ")) & "%' and fornitore like '%od%' and aboliti='0' limit 1"
+									Set Tbcount = Server.CreateObject("ADODB.RecordSet")				
+									Tbcount.Open querydcount,connm
+									
+									npaginecat=Formatnumber(Cint(Tbcount("Tot")) / 20,0)
+									npaginemax=Cint(Tbcount("Tot"))
+									Tbcount.close
+									'controllo
+									'response.Write(npaginemax)		
+									'response.Write(npaginecat)						
+									queryd2="Select * From prodotti where SottoCategoria='" & Trim(Replace(Request("sotto"),"%20"," ")) & "' and marchio like '%" & Trim(Replace(Request("marchio"),"%20"," ")) & "%' and fornitore like '%od%' and aboliti='0' order by  " & vordine & "  LIMIT " & paginasp & " , " & Divpagine
+									Set tbprodcatalogo = Server.CreateObject("ADODB.RecordSet")	
+									tbprodcatalogo.Open queryd2,connm
+							 
+									
+									 i=0
+									counterfrm=18
+									Do While not (tbprodcatalogo.eof)
+										counterfrm=counterfrm+1
+										 i=i+1
+										'Nuovo_Prodotto=Ucase(Trim(tbprodcatalogo("Nuovoprodotto")))
+										%>
+										<!--#include file="single_product.inc" -->
+										<%
+										
+										tbprodcatalogo.movenext
+									Loop
+									tbprodcatalogo.close
+									%>
+
+            </div>
+
+            <div class="bf-pagination">
+              <ul>
+                <li class="bf-pagination-prev">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </li>
+
+                <strong>
+									<%paginabol=false
+									for fsp=0 to npaginecat-1								 										        
+										if trim(request("pagsp"))=cstr(fsp) then%>
+										<button class="bf-pagination-btn active"><%=fsp+1%></button>
+									<%else
+										if trim(request("pagsp"))="" and paginabol=false then%>
+											<button class="bf-pagination-btn active">1</button>
+											<%paginabol=true
+										else%>
+									<button class="bf-pagination-btn" onClick="top.location.href='odmarchio.asp?pagsp=<%=fsp%>&menu=yes&cat=<%=request("cat")%>&sotto=<%=request("sotto")%>&marchio<%=request("marchio")%>#odposizione'"><%=fsp+1%></button>
+
+										<%end if 
+									end if 
+									'Response.Write "</a>"
+									next%> </strong>   
+
+                <li class="bf-pagination-next">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </li>
+              </ul>
+              <span class="bf-pagination-info">
+                Showing 1 - 6 of <%=npaginecat-1%> items
+              </span>
+            </div>
+          </div><!-- bf-main-content -->
+        </div><!-- bf-page-grid -->
+      </div><!-- bf-container -->
+    </div><!-- bf-page -->
+
+
+ <!--#include file="footer.inc" -->
+ 
+  </body>
+</html>
+<!--#include file="sqlchiudi.inc"-->
