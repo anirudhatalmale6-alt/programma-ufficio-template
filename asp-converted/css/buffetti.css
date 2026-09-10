@@ -1213,11 +1213,13 @@ img {
 }
 
 .bf-quantity-input {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    width: max-content;
     border: 1px solid var(--border);
     border-radius: 4px;
     overflow: hidden;
+    vertical-align: middle;
 }
 
 .bf-quantity-input input[type="button"],
@@ -2505,4 +2507,854 @@ img {
     .bf-form-table td:first-child {
         width: auto;
     }
+}
+
+/* =========================================================
+   OD Catalog tree + Brand list pages
+   (odcat.asp, odcartuccemarche.asp)
+   Turns the .bf-category-list wrapper into a branded white card
+   matching the catbuffetti.asp look, and cleans up the legacy
+   red <font> headers, table rows and +/- expand buttons.
+   ========================================================= */
+.bf-category-list {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+}
+/* clearfix: the brand table uses legacy align="left" (=float),
+   without this the card collapses and the footer overlaps it */
+.bf-category-list::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bf-category-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* category header rows */
+.bf-category-list h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.bf-category-list li:first-child h2 {
+    margin-top: 0;
+}
+/* CSS-drawn chevron so it never depends on an icon font */
+.bf-category-list h2::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transform: rotate(-45deg);
+    margin-right: 2px;
+    flex: 0 0 auto;
+}
+/* neutralise legacy red font + old arrow image inside headers */
+.bf-category-list font {
+    color: var(--primary) !important;
+}
+.bf-category-list h2 img {
+    display: none;
+}
+
+/* links (subcategories / products) */
+.bf-category-list li {
+    padding: 2px 0;
+}
+.bf-category-list a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+.bf-category-list a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* legacy table-based subcategory rows -> flatten borders/spacing */
+.bf-category-list table {
+    border: 0 !important;
+    border-collapse: collapse;
+}
+.bf-category-list table td {
+    border: 0 !important;
+    padding: 2px 0;
+    vertical-align: middle;
+}
+
+/* +/- expand buttons (input.plus) */
+.bf-category-list .quantity.buttons_added {
+    display: inline-block;
+}
+.bf-category-list input.plus {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.bf-category-list input.plus:hover {
+    background: var(--primary-light) !important;
+}
+
+/* brand list (odcartuccemarche.asp writes a border=1 table) */
+.bf-category-list table[border="1"] {
+    width: 100%;
+    border: 0 !important;
+    float: none !important;
+}
+.bf-category-list table[border="1"] th {
+    border: 0 !important;
+    text-align: left;
+    vertical-align: top;
+    padding: 0 24px 0 0;
+    font-weight: 400;
+}
+.bf-category-list table[border="1"] a {
+    display: inline-block;
+    padding: 5px 0;
+    color: var(--text);
+    font-weight: 500;
+}
+.bf-category-list table[border="1"] a:hover {
+    color: var(--primary-light);
+}
+
+/* =========================================================
+   SITE-WIDE BUTTON VISIBILITY FIX
+   css/styles.css (Tailwind preflight) is loaded AFTER
+   buffetti.css and contains:
+     button,[type=button],[type=reset],[type=submit]{background:transparent}
+   The [type=submit]/[type=button] attribute selectors tie
+   specificity with our single-class button rules, and because
+   styles.css loads later it WINS - wiping every button background
+   to transparent (white text on transparent = invisible).
+   We restore the intended backgrounds with !important so the
+   reset can never override them again.
+   ========================================================= */
+.bf-btn-primary,
+button.bf-btn-primary,
+input.bf-btn-primary {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.bf-btn-primary:hover { background: var(--primary-light) !important; }
+
+.bf-btn-red,
+button.bf-btn-red,
+input.bf-btn-red {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.bf-btn-red:hover { background: var(--accent-hover) !important; }
+
+.bf-btn-submit,
+button.bf-btn-submit,
+input.bf-btn-submit {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.bf-btn-submit:hover { background: var(--accent-hover) !important; }
+
+.bf-btn-cart,
+button.bf-btn-cart,
+input.bf-btn-cart {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.bf-btn-cart:hover { background: var(--primary-light) !important; }
+
+.bf-search-btn,
+button.bf-search-btn {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none !important;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+.bf-search-btn:hover { background: var(--primary-light) !important; }
+
+/* outline button: keep it transparent but make sure the border + text show */
+.bf-btn-outline,
+button.bf-btn-outline {
+    color: var(--primary) !important;
+    border: 2px solid var(--primary) !important;
+}
+.bf-btn-outline:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+/* Catalogo mega-menu: JS click-toggle open state (in addition to hover) */
+.bf-nav-catalog.bf-mega-open .bf-mega-menu {
+    display: block;
+}
+.bf-catalog-toggle {
+    cursor: pointer;
+}
+
+/* ============================================================
+   MISSING-CLASS RESTORE PACK
+   These bf- classes were present in the markup but had no CSS,
+   so their content rendered unstyled. Added 10 Sep.
+   ============================================================ */
+
+/* ---- Grid safety: main column must not blow out on wide tables ---- */
+.bf-main-content {
+    min-width: 0;
+    max-width: 100%;
+}
+.bf-main-content > table,
+.bf-main-content img {
+    max-width: 100%;
+}
+
+/* ---- Toolbar (category name + sort) ---- */
+.bf-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.bf-toolbar-info p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+}
+.bf-toolbar-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.bf-toolbar-sort span {
+    font-size: 13px;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+.bf-toolbar-sort form {
+    margin: 0;
+}
+
+/* ---- Sort bar (shop grid header) ---- */
+.bf-sort-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border);
+}
+.bf-sort-label p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: capitalize;
+}
+.bf-sort-select {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 13px;
+    color: var(--text);
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ---- Pagination ---- */
+.bf-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0 8px;
+}
+.bf-pagination ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.bf-pagination li,
+.bf-pagination strong {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-weight: 400;
+}
+.bf-pagination-btn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff !important;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.bf-pagination-btn:hover {
+    background: var(--bg-gray) !important;
+    border-color: var(--primary-light);
+}
+.bf-pagination-btn.active {
+    background: var(--primary) !important;
+    color: #fff;
+    border-color: var(--primary);
+}
+.bf-pagination-prev,
+.bf-pagination-next {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.bf-pagination-prev:hover,
+.bf-pagination-next:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+.bf-pagination-info {
+    margin-left: 10px;
+    font-size: 13px;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+/* ---- Form groups (login / register / recover) ---- */
+.bf-form-group {
+    margin-bottom: 18px;
+}
+.bf-form-group:last-child {
+    margin-bottom: 0;
+}
+.bf-form-group > label {
+    display: block;
+    margin-bottom: 6px;
+}
+.bf-form-group .bf-form-input,
+.bf-form-group input[type="text"],
+.bf-form-group input[type="password"],
+.bf-form-group input[type="email"] {
+    width: 100%;
+}
+
+/* ---- Inline message (recover password etc.) ---- */
+.bf-message {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* ---- Modal popup card (post-login welcome) ---- */
+.bf-popup-card {
+    position: relative;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    padding: 28px 32px 32px;
+    max-width: 420px;
+    width: calc(100% - 32px);
+    z-index: 10000;
+}
+.bf-popup-card form {
+    margin: 0 0 12px;
+}
+.bf-popup-card .bf-btn-red {
+    width: 100%;
+}
+.bf-popup-card br {
+    display: none;
+}
+.bf-popup-card .basic_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px !important;
+    height: 28px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.bf-popup-card .basic_close:hover {
+    opacity: 1;
+}
+
+/* ---- Lightbox popup body (quick-view iframes) ---- */
+.bf-popup {
+    padding: 16px;
+    background: #fff;
+}
+.bf-popup-inner {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* ---- Product card extras ---- */
+.bf-btn-quickview {
+    cursor: pointer;
+}
+.bf-iva-info {
+    font-size: 12px;
+    color: var(--text-light);
+}
+.bf-wishlist-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+}
+.bf-wishlist-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--primary);
+}
+.bf-wishlist-footer a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+.bf-product-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+}
+.bf-product-description p {
+    margin: 0 0 10px;
+}
+.bf-product-pricing {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.bf-product-qty-note {
+    font-size: 12px;
+    color: var(--text-light);
+    display: block;
+    margin-top: 4px;
+}
+.bf-product-sheets {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+}
+.bf-product-sheets a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+}
+.bf-product-sheets a:hover {
+    text-decoration: underline;
+}
+
+/* ---- Contact page columns ---- */
+.bf-contact-form-col {
+    min-width: 0;
+}
+.bf-contact-info-col {
+    min-width: 0;
+}
+.bf-section-subtitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 14px;
+}
+
+/* ---- Cart print sheet ---- */
+.bf-print-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--primary);
+}
+
+/* ---- Product detail: variants, specs, reviews ---- */
+.bf-product-detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+.bf-product-variant {
+    margin: 16px 0;
+}
+.bf-variant-list,
+.bf-variant-colors {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+}
+.bf-variant-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    cursor: pointer;
+    display: inline-block;
+    transition: var(--transition);
+}
+.bf-variant-swatch:hover {
+    border-color: var(--primary);
+}
+.bf-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.bf-specs-col {
+    min-width: 0;
+}
+.bf-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.bf-specs-table th,
+.bf-specs-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+.bf-specs-table th {
+    width: 40%;
+    font-weight: 600;
+    color: var(--text-light);
+}
+.bf-reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 32px;
+    align-items: start;
+}
+.bf-reviews-main,
+.bf-reviews-side {
+    min-width: 0;
+}
+.bf-reviews-subtitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 14px;
+}
+.bf-reviews-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.bf-review-item {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+.bf-review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.bf-review-body {
+    flex: 1;
+    min-width: 0;
+}
+.bf-review-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.bf-review-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+.bf-review-form {
+    margin-top: 24px;
+}
+.bf-review-field {
+    margin-bottom: 14px;
+}
+.bf-review-rating {
+    display: flex;
+    gap: 4px;
+    color: #f6ad55;
+    margin-bottom: 12px;
+}
+.bf-reviews-summary {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-align: center;
+}
+.bf-reviews-score {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+.bf-reviews-bars {
+    margin-top: 16px;
+}
+.bf-review-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+.bf-bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-gray);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.bf-bar-fill {
+    height: 100%;
+    background: #f6ad55;
+    border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+    .bf-reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    .bf-toolbar,
+    .bf-sort-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ---- Safety net: +/- buttons must never be invisible ----
+   The Tailwind preflight in css/styles.css sets
+     button,[type="button"],[type="reset"],[type="submit"]{background:transparent}
+   which blanked every legacy .plus/.minus that had no inline style.
+   input.plus (0,0,1,1) outranks [type="button"] (0,0,1,0), so this wins
+   without !important — and inline styles still take precedence. */
+input.plus,
+input.minus {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    min-width: 24px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 3px;
+}
+input.plus:hover,
+input.minus:hover {
+    background: var(--primary-light);
+}
+/* inside the cart stepper the chips are square-joined, not rounded */
+.bf-quantity-input input.plus,
+.bf-quantity-input input.minus {
+    border-radius: 0;
+}
+
+/* ---- Remaining buttons blanked by the Tailwind preflight ----
+   These carry type="submit"/"button", so [type=...] (0,0,1,0) ties with the
+   class selector and wins on source order. Same root cause as the bf-btn-*
+   block above; only classes with a real (non-transparent) background need it. */
+button.bf-filter-btn,
+.bf-filter-btn {
+    background: var(--primary) !important;
+    color: #fff !important;
+    border: none !important;
+}
+button.bf-filter-btn:hover,
+.bf-filter-btn:hover {
+    background: var(--primary-light) !important;
+}
+
+.bf-scroll-top {
+    background: rgba(0,0,0,0.5) !important;
+    color: #fff !important;
+}
+.bf-scroll-top:hover {
+    background: var(--primary) !important;
+}
+
+/* ---- Catalogo mega-menu: two-column panel ----
+   Was: .bf-mega-menu spanned the full nav width, so each .bf-mega-category <li>
+   was 1280px wide and the flyout's `left:100%` put it at x=1280 — completely
+   off-screen (and it forced a horizontal scroll). The panel's own
+   `overflow-y:auto` would have clipped the flyout even once positioned.
+   Now: fixed-width scrolling category column on the left, subcategory panel
+   filling the rest of the same box. */
+.bf-mega-menu {
+    height: 500px;
+    overflow: visible;      /* must not clip the subcategory panel */
+}
+.bf-mega-list {
+    width: 320px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid var(--border);
+    background: #fff;
+}
+/* containing block for the flyout becomes .bf-mega-menu, not the <li> */
+.bf-mega-category {
+    position: static;
+}
+.bf-mega-subcats {
+    left: 320px;
+    top: 0;
+    right: 0;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    overflow-y: auto;
+    border: none;
+    border-left: 1px solid var(--border);
+    box-shadow: none;
+}
+/* subcategories flow in columns so long lists stay readable */
+.bf-mega-subcats ul {
+    columns: 3;
+    column-gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.bf-mega-subcats ul li {
+    break-inside: avoid;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+    .bf-mega-menu { height: auto; }
+    .bf-mega-list { width: 100%; height: auto; border-right: none; }
+    .bf-mega-subcats { position: static; height: auto; border-left: none; }
+    .bf-mega-subcats ul { columns: 1; }
+}
+
+/* ---- odcat.asp: align the +/- expanders into a column ----
+   Each subcategory row is its OWN single-row <table> (131 of them), so the
+   columns cannot line up on their own and the + buttons came out ragged.
+   Giving every row-table the same width puts the label left and the + on a
+   consistent column edge.
+   MUST stay scoped to those rows: odcartuccemarche.asp puts its multi-column
+   BRAND table inside .bf-category-list too, and forcing table-layout:fixed on
+   that one squeezed its columns until the brand names overlapped. :has() keeps
+   this to tables that actually contain an expander button; browsers without
+   :has() simply keep the old ragged-but-working alignment. */
+.bf-category-list table:has(input.plus) {
+    width: 100%;
+    max-width: 460px;
+    table-layout: fixed;
+}
+.bf-category-list table:has(input.plus) td:first-child {
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bf-category-list table:has(input.plus) td:last-child {
+    width: 40px;
+    text-align: right;
 }

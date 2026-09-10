@@ -112,7 +112,7 @@
     <div class="bf-container">
         <ul class="bf-nav-list">
             <li class="bf-nav-item bf-nav-catalog">
-                <a href="#"><i class="fa-solid fa-bars"></i> Catalogo</a>
+                <a href="#" class="bf-catalog-toggle" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bars"></i> Catalogo</a>
                 <div class="bf-mega-menu">
                     <ul class="bf-mega-list">
                         <li class="bf-mega-category">
@@ -135,7 +135,11 @@
                             i=i+1
                         %>
                         <li class="bf-mega-category">
-                            <a href="odlista.asp?cat=<%=Replace(tbmenucat("categoria")," ","%20")%>">
+                            <%' Category row opens its sub-menu; it must NOT navigate.
+                               ' odlista.asp needs a "sotto" to return rows, so a
+                               ' category-only URL renders an empty list. The original
+                               ' menu showed the category as a label for this reason. %>
+                            <a href="javascript:void(0);" class="bf-mega-category-label">
                                 <span><%=lcase(tbmenucat("Categoria")) %></span>
                                 <i class="fa-solid fa-chevron-right"></i>
                             </a>
